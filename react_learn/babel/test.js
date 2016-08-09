@@ -1,0 +1,1 @@
+var R = <p>"Hello"</p>
