@@ -2,7 +2,8 @@
   "name": "UI_STUDY",
   "version": "0.0.1",
   "scripts": {
-    "build": "babel ./react_learn/babel -d ./react_learn/javascript"
+    "build-react": "babel ./react_learn/babel -d ./react_learn/javascript",
+    "build-require": "babel ./requirejs_learn/babel -d ./requirejs_learn/js"
   },
   "devDependencies": {
     "babel-cli": "^6.11.4",
