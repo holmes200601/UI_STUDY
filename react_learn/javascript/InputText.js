@@ -15,6 +15,15 @@ var InputTextComponent = React.createClass({
 		};
 	},
 
+	changeHandler: function changeHandler(event) {
+		event.stopPropagation();
+		this.setState({ text: event.target.value });
+	},
+
+	blurHandler: function blurHandler(event) {
+		console.log("Value of text is: " + event.target.value);
+	},
+
 	render: function render() {
 		return React.createElement(
 			"div",
@@ -24,7 +33,9 @@ var InputTextComponent = React.createClass({
 				{ className: "textLabel" },
 				this.props.label
 			),
-			React.createElement("input", { type: "text", value: this.state.text })
+			React.createElement("input", { type: "text", onChange: this.changeHandler, onBlur: this.blurHandler, value: this.state.text })
 		);
 	}
 });
+
+ReactDOM.render(React.createElement(InputTextComponent, { label: "Label Text" }), document.getElementById("container"));
